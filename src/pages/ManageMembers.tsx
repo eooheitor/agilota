@@ -4,11 +4,6 @@ import { ChevronLeft, UserPlus, Trash2, AlertCircle } from 'lucide-react'
 import { apiFetch } from '../lib/api'
 import { ConsortiumMember, Consortium, User } from '../types'
 
-const ROLE_LABEL: Record<string, string> = {
-  recebedor: 'Recebedor',
-  pagador: 'Pagador',
-}
-
 const STATUS_LABEL: Record<string, string> = {
   pending: 'Aguardando',
   accepted: 'Aceito',
