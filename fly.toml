@@ -1,0 +1,29 @@
+# fly.toml app configuration file generated for agilota on 2026-06-08T19:09:50-03:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'agilota'
+primary_region = 'gru'
+
+[build]
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+[[vm]]
+  memory = '256mb'
+  cpu_kind = 'shared'
+  cpus = 1
+
+[env]
+  DB_PATH = '/data/database.sqlite'
+
+[[mounts]]
+  source = 'agilota_data'
+  destination = '/data'
